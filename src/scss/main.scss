@@ -1,0 +1,120 @@
+// базовые подключения
+@import "_mixins";
+@import "_settings";
+
+
+.site-container {
+  font-family: arial, sans-serif;
+  max-width: 584px;
+  padding: 5px;
+  margin: 70px auto;
+}
+
+.makiage_logo {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.main_search {
+  &-logo {
+    @include flex;
+    align-items: flex-end;
+    margin-bottom: 18px;
+    height: 290px;
+  }
+
+  &-field {
+    position: relative;
+    border-radius: 30px;
+    border: 1px solid #dfe1e5;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+      border-color: rgba(223, 225, 229, 0);
+    }
+
+    &::before {
+      content: '';
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../img/search.svg');
+      width: 20px;
+      height: 20px;
+      opacity: .3;
+      position: absolute;
+      left: 10px;
+    }
+  }
+
+  &-text {
+    color: #4d5156;
+    line-height: 28px;
+    text-align: center;
+    font-size: 13px;
+  }
+}
+
+
+
+.input_item {
+  width: 100%;
+  padding: 12px 42px;
+  border-radius: 30px;
+  border: none;
+
+  &-til_icon {
+    background: url('../img/tia.png') no-repeat center;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 50px;
+  }
+
+  &-voice_icon {
+    background: url('../img/voice-icon.svg') no-repeat center;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+}
+
+
+.buttons {
+  @include flex;
+  height: 70px;
+  margin-top: 18px;
+
+  button {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+      background-color: #f8f9fa;
+      border: 1px solid #dadce0;
+      color: #202124;
+    }
+  }
+}
